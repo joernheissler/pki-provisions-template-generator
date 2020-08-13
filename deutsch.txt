@@ -1,0 +1,270 @@
+1. Einleitung
+1.1 Überblick
+1.2 Dokumentname und Identifizierung
+1.3 PKI-Teilnehmer
+1.3.1 Zertifizierungsbehörden
+1.3.2 Registrierungsbehörden
+1.3.3 Abonnenten
+1.3.4 Sich darauf verlassende Parteien
+1.3.5 Andere Teilnehmer
+1.4 Verwendung des Zertifikats
+1.4.1. Geeignete Zertifikatsverwendungen
+1.4.2 Verbotene Zertifikatsverwendungen
+1.5 Verwaltung der Politik
+1.5.1 Organisation, die das Dokument verwaltet
+1.5.2 Kontaktperson
+1.5.3 Person, die die Eignung des CPS für die Richtlinie bestimmt
+1.5.4 CPS-Genehmigungsverfahren
+1.6 Definitionen und Akronyme
+2. Verantwortlichkeiten für Publikation und Repositorium
+2.1 Repositorien
+2.2 Veröffentlichung von Zertifizierungsinformationen
+2.3 Zeitpunkt oder Häufigkeit der Veröffentlichung
+2.4 Zugriffskontrollen auf Repositorien
+3. Identifizierung und Authentifizierung
+3.1 Benennung
+3.1.1 Arten von Namen
+3.1.2 Notwendigkeit, dass Namen aussagekräftig sind
+3.1.3 Anonymität oder Pseudonymität der Abonnenten
+3.1.4 Regeln für die Interpretation verschiedener Namensformen
+3.1.5 Eindeutigkeit von Namen
+3.1.6 Anerkennung, Authentifizierung und Rolle von Warenzeichen
+3.2 Anfängliche Identitätsprüfung
+3.2.1 Methode zum Nachweis des Besitzes eines privaten Schlüssels
+3.2.2 Authentifizierung der Identität der Organisation
+3.2.3 Authentifizierung der individuellen Identität
+3.2.4 Nicht verifizierte Abonnenteninformationen
+3.2.5 Validierung der Autorität
+3.2.6 Kriterien für die Interoperation
+3.3 Identifizierung und Authentifizierung für Re-Key-Anfragen
+3.3.1 Identifizierung und Authentifizierung für Routine-Rekey
+3.3.2 Identifizierung und Authentifizierung für Re-Key nach Widerruf
+3.4 Identifizierung und Authentifizierung für Sperranträge
+4. Betriebsanforderungen für den Lebenszyklus des Zertifikats
+4.1 Zertifikatsantrag
+4.1.1 Wer kann einen Zertifikatsantrag stellen
+4.1.2 Einschreibungsprozess und Verantwortlichkeiten
+4.2 Bearbeitung von Zertifikatsanträgen
+4.2.1 Durchführen von Identifikations- und Authentisierungsfunktionen
+4.2.2 Genehmigung oder Ablehnung von Zertifikatsanträgen
+4.2.3 Zeit für die Bearbeitung von Zertifikatsanträgen
+4.3 Ausstellung von Zertifikaten
+4.3.1 CA-Aktionen während der Zertifikatsausstellung
+4.3.2 Benachrichtigung des Zertifikatnehmers durch die CA über die Zertifikatsausstellung
+4.4 Annahme von Zertifikaten
+4.4.1 Verhalten, das eine Zertifikatsannahme darstellt
+4.4.2 Veröffentlichung des Zertifikats durch die CA
+4.4.3 Benachrichtigung über die Zertifikatsausstellung durch die CA an andere Stellen
+4.5 Verwendung von Schlüsselpaar und Zertifikat
+4.5.1 Verwendung des privaten Schlüssels und des Zertifikats des Teilnehmers
+4.5.2 Verwendung von öffentlichen Schlüsseln und Zertifikaten von vertrauenswürdigen Parteien
+4.6 Erneuerung von Zertifikaten
+4.6.1 Umstände für die Erneuerung von Zertifikaten
+4.6.2 Wer kann eine Verlängerung beantragen
+4.6.3 Bearbeitung von Anträgen auf Zertifikatserneuerung
+4.6.4 Benachrichtigung des Abonnenten über die Ausstellung eines neuen Zertifikats
+4.6.5 Verhalten, das die Annahme eines Erneuerungszertifikats darstellt
+4.6.6 Veröffentlichung des Erneuerungszertifikats durch die CA
+4.6.7 Benachrichtigung über die Zertifikatsausstellung durch die CA an andere Stellen
+4.7 Zertifikat-Rekey
+4.7.1 Umstand für Zertifikat-Rekey
+4.7.2 Wer kann die Zertifizierung eines neuen öffentlichen Schlüssels beantragen
+4.7.3 Bearbeitung von Anträgen auf Zertifikatswiederholung
+4.7.4 Benachrichtigung des Abonnenten über die Ausstellung eines neuen Zertifikats
+4.7.5 Verhalten, das die Annahme eines neu verschlüsselten Zertifikats darstellt
+4.7.6 Veröffentlichung des neu verschlüsselten Zertifikats durch die CA
+4.7.7 Benachrichtigung über die Zertifikatsausstellung durch die CA an andere Stellen
+4.8 Änderung des Zertifikats
+4.8.1 Umstände für die Zertifikatsänderung
+4.8.2 Wer kann eine Zertifikatsänderung beantragen
+4.8.3 Bearbeitung von Zertifikatsänderungsanträgen
+4.8.4 Benachrichtigung des Abonnenten über die Ausstellung eines neuen Zertifikats
+4.8.5 Verhalten, das eine Annahme des modifizierten Zertifikats darstellt
+4.8.6 Veröffentlichung des modifizierten Zertifikats durch die CA
+4.8.7 Benachrichtigung über die Zertifikatsausstellung durch die CA an andere Stellen
+4.9 Entzug und Aussetzung von Zertifikaten
+4.9.1 Umstände für den Widerruf
+4.9.2 Wer kann den Widerruf beantragen
+4.9.3 Verfahren für Sperranträge
+4.9.4 Frist für den Antrag auf Widerruf
+4.9.5 Zeit, innerhalb der die CA den Sperrantrag bearbeiten muß
+4.9.6 Widerrufsprüfungsanforderung für sich berufende Parteien
+4.9.7 Häufigkeit der GRL-Ausstellung (falls zutreffend)
+4.9.8 Maximale Latenzzeit für CRLs (falls zutreffend)
+4.9.9 Online-Widerruf/Statusprüfung der Verfügbarkeit
+4.9.10 Anforderungen an die Online-Widerrufsprüfung
+4.9.11 Andere Formen von Widerrufsanzeigen
+4.9.12 Besondere Anforderungen als Schlüsselkompromiss
+4.9.13 Umstände für die Suspendierung
+4.9.14 Wer kann die Suspendierung beantragen
+4.9.15 Verfahren für einen Antrag auf Suspendierung
+4.9.16 Begrenzungen der Aussetzungsperiode
+4.10 Dienste für den Zertifikatsstatus
+4.10.1 Betriebliche Merkmale
+4.10.2 Verfügbarkeit von Diensten
+4.10.3 Optionale Merkmale
+4.11 Ende der Subskription
+4.12 Schlüsselhinterlegung und -rückgewinnung
+4.12.1 Grundsätze und Praktiken für die Hinterlegung und Wiederherstellung von Schlüsseln
+4.12.2 Politik und Praktiken zur Einkapselung und Wiederherstellung von Sitzungsschlüsseln
+5. Einrichtungs-, Management- und Betriebskontrollen
+5.1 Physische Kontrollen
+5.1.1 Standort und Aufbau des Standorts
+5.1.2 Physischer Zugang
+5.1.3 Stromversorgung und Klimatisierung
+5.1.4 Wasser-Belastungen
+5.1.5 Brandverhütung und Brandschutz
+5.1.6 Medienspeicherung
+5.1.7 Abfallentsorgung
+5.1.8 Externe Sicherung
+5.2 Verfahrenskontrollen
+5.2.1 Vertrauenswürdige Rollen
+5.2.2 Anzahl der erforderlichen Personen pro Aufgabe
+5.2.3 Identifizierung und Authentifizierung für jede Rolle
+5.2.4 Rollen, die eine Trennung der Aufgaben erfordern
+5.3 Personelle Kontrollen
+5.3.1 Qualifikationen, Erfahrung und Zulassungsvoraussetzungen
+5.3.2 Verfahren zur Überprüfung des Hintergrunds
+5.3.3 Ausbildungsanforderungen
+5.3.4 Umschulungshäufigkeit und Anforderungen
+5.3.5 Häufigkeit und Reihenfolge der Jobrotation
+5.3.6 Sanktionen für unautorisierte Handlungen
+5.3.7 Anforderungen an unabhängige Auftragnehmer
+5.3.8 Dem Personal zur Verfügung gestellte Dokumentation
+5.4 Audit-Protokollierungsverfahren
+5.4.1 Arten von aufgezeichneten Ereignissen
+5.4.2 Häufigkeit des Verarbeitungsprotokolls
+5.4.3 Aufbewahrungsfrist für das Audit-Protokoll
+5.4.4 Schutz des Audit-Protokolls
+5.4.5 Sicherungsverfahren des Audit-Protokolls
+5.4.6 Audit-Sammelsystem (intern vs. extern)
+5.4.7 Benachrichtigung des ereignisauslösenden Subjekts
+5.4.8 Bewertungen der Schwachstellen
+5.5 Archivierung von Aufzeichnungen
+5.5.1 Arten von archivierten Aufzeichnungen
+5.5.2 Aufbewahrungsfrist für das Archiv
+5.5.3 Schutz des Archivs
+5.5.4 Sicherungsverfahren für Archive
+5.5.5 Anforderungen an die Zeitstempelung von Aufzeichnungen
+5.5.6 Archivsammelsystem (intern oder extern)
+5.5.7 Verfahren zur Beschaffung und Überprüfung von Archivinformationen
+5.6 Schlüsselumschaltung
+5.7 Kompromiss und Notfallwiederherstellung
+5.7.1 Verfahren zur Behandlung von Vorfällen und Kompromissen
+5.7.2 Computerressourcen, Software und/oder Daten sind beschädigt
+5.7.3 Kompromissverfahren für private Schlüssel von Entitäten
+5.7.4 Geschäftskontinuitätsfähigkeiten nach einer Katastrophe
+5.8 CA- oder RA-Abbruch
+6. Technische Sicherheitskontrollen
+6.1 Schlüsselpaar-Generierung und -Installation
+6.1.1 Schlüsselpaar-Generierung
+6.1.2 Zustellung des privaten Schlüssels an den Abonnenten
+6.1.3 Übergabe des öffentlichen Schlüssels an den Zertifikatsaussteller
+6.1.4 Übergabe des öffentlichen CA-Schlüssels an vertrauenswürdige Parteien
+6.1.5 Schlüsselgrößen
+6.1.6 Generierung und Qualitätsprüfung öffentlicher Schlüsselparameter
+6.1.7 Schlüsselverwendungszwecke (gemäß X.509 v3 Schlüsselverwendungsfeld)
+6.2 Schutz privater Schlüssel und kryptographische Modul-Engineering-Kontrollen
+6.2.1 Standards und Kontrollen für kryptographische Module
+6.2.2 Privater Schlüssel (n aus m) Mehrpersonenkontrolle
+6.2.3 Hinterlegung privater Schlüssel
+6.2.4 Sicherung privater Schlüssel
+6.2.5 Archivierung privater Schlüssel
+6.2.6 Übertragung privater Schlüssel in oder aus einem kryptographischen Modul
+6.2.7 Speicherung privater Schlüssel auf kryptographischem Modul
+6.2.8 Methode zur Aktivierung des privaten Schlüssels
+6.2.9 Methode zur Deaktivierung des privaten Schlüssels
+6.2.10 Methode zur Vernichtung privater Schlüssel
+6.2.11 Bewertung kryptographischer Module
+6.3 Andere Aspekte der Schlüsselpaarverwaltung
+6.3.1 Archivierung öffentlicher Schlüssel
+6.3.2 Betriebszeiträume für Zertifikate und Nutzungszeiträume für Schlüsselpaare
+6.4 Aktivierungsdaten
+6.4.1 Generierung und Installation von Aktivierungsdaten
+6.4.2 Schutz der Aktivierungsdaten
+6.4.3 Andere Aspekte der Aktivierungsdaten
+6.5 Computer-Sicherheitskontrollen
+6.5.1 Spezifische technische Anforderungen an die Computersicherheit
+6.5.2 Computer-Sicherheitseinstufung
+6.6 Technische Kontrollen über den gesamten Lebenszyklus
+6.6.1 Steuerung der Systementwicklung
+6.6.2 Kontrollen des Sicherheitsmanagements
+6.6.3 Sicherheitskontrollen während des Lebenszyklus
+6.7 Netzwerksicherheitskontrollen
+6.8 Zeitstempelung
+7. Zertifikat, CRL- und OCSP-Profile
+7.1 Profil des Zertifikats
+7.1.1 Versionsnummer(n)
+7.1.2 Zertifikatsverlängerungen
+7.1.3 Algorithmus-Objektbezeichner
+7.1.4 Namensformen
+7.1.5 Namensbeschränkungen
+7.1.6 Objektkennung der Zertifikatsrichtlinie
+7.1.7 Verwendung der Erweiterung "Policy Constraints
+7.1.8 Syntax und Semantik von Richtlinienqualifizierern
+7.1.9 Verarbeitungssemantik für die kritische Erweiterung der Zertifikatsrichtlinien
+7.2 GRL-Profil
+7.2.1 Versionsnummer(n)
+7.2.2 CRL und CRL-Eintragserweiterungen
+7.3 OCSP-Profil
+7.3.1 Versionsnummer(n)
+7.3.2 OCSP-Erweiterungen
+8. Ordnungsmäßigkeitsprüfung und andere Bewertungen
+8.1 Häufigkeit oder Umstände der Beurteilung
+8.2 Identität/Qualifikationen des Begutachters
+8.3 Beziehung des Prüfers zur bewerteten Einheit
+8.4 Von der Bewertung abgedeckte Themen
+8.5 Aufgrund von Mängeln ergriffene Maßnahmen
+8.6 Kommunikation der Ergebnisse
+9. Sonstige geschäftliche und rechtliche Angelegenheiten
+9.1 Gebühren
+9.1.1 Gebühren für die Ausstellung oder Erneuerung von Zertifikaten
+9.1.2 Gebühren für den Zertifikatszugang
+9.1.3 Gebühren für den Zugang zu Widerrufs- oder Statusinformationen
+9.1.4 Honorare für andere Dienstleistungen
+9.1.5 Rückerstattungspolitik
+9.2 Finanzielle Verantwortung
+9.2.1 Versicherungsschutz
+9.2.2 Sonstige Vermögenswerte
+9.2.3 Versicherungs- oder Garantieleistungen für Endeinheiten
+9.3 Vertraulichkeit von Geschäftsinformationen
+9.3.1 Umfang der vertraulichen Informationen
+9.3.2 Informationen, die nicht in den Bereich der vertraulichen Informationen fallen
+9.3.3 Verantwortung für den Schutz vertraulicher Informationen
+9.4 Datenschutz persönlicher Informationen
+9.4.1 Plan zum Schutz der Privatsphäre
+9.4.2 Als privat behandelte Informationen
+9.4.3 Nicht als privat geltende Informationen
+9.4.4 Verantwortung für den Schutz privater Informationen
+9.4.5 Benachrichtigung und Zustimmung zur Verwendung privater Informationen
+9.4.6 Offenlegung im Rahmen eines Gerichts- oder Verwaltungsverfahrens
+9.4.7 Andere Umstände der Offenlegung von Informationen
+9.5 Geistige Eigentumsrechte
+9.6 Zusicherungen und Gewährleistungen
+9.6.1 Zusicherungen und Gewährleistungen der CA
+9.6.2 Zusicherungen und Gewährleistungen der RA
+9.6.3 Zusicherungen und Gewährleistungen des Abonnenten
+9.6.4 Zusicherungen und Gewährleistungen der vertrauenswürdigen Partei
+9.6.5 Zusicherungen und Gewährleistungen anderer Teilnehmer
+9.7 Gewährleistungsausschlüsse
+9.8 Haftungsbeschränkungen
+9.9 Entschädigungen
+9.10 Laufzeit und Beendigung
+9.10.1 Begriff
+9.10.2 Beendigung
+9.10.3 Auswirkung von Abbruch und Überleben
+9.11 Individuelle Benachrichtigungen und Kommunikation mit Teilnehmern
+9.12 Abänderungen
+9.12.1 Verfahren für Änderungen
+9.12.2 Benachrichtigungsmechanismus und -zeitraum
+9.12.3 Umstände, unter denen der OID geändert werden muss
+9.13 Bestimmungen zur Streitbeilegung
+9.14 Geltendes Recht
+9.15 Einhaltung des anwendbaren Rechts
+9.16 Diverse Bestimmungen
+9.16.1 Gesamte Vereinbarung
+9.16.2 Zuweisung
+9.16.3 Abtrennbarkeit
+9.16.4 Rechtsdurchsetzung (Anwaltskosten und Rechtsverzicht)
+9.16.5 Höhere Gewalt
+9.17 Sonstige Bestimmungen

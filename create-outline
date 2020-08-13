@@ -1,0 +1,98 @@
+#!/usr/bin/python3
+
+"""
+MIT License
+
+Copyright (c) 2020 Jörn Heissler
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+"""
+
+import re
+from os import mkdir
+from contextlib import suppress
+
+delims = "*=-^"
+
+
+def write_rst(doc, depth, idx, title):
+    label = "s_" + "_".join(str(i) for i in idx) if idx else "index"
+    fname = ("index" if depth == 0 else f"{idx[0]}/index" if depth == 1 else f"{idx[0]}/{idx[1]}") + ".rst"
+    if depth == 1:
+        with suppress(FileExistsError):
+            mkdir("source/" + str(idx[0]))
+
+    with open("source/" + fname, "wt" if depth < 3 else "at") as fp:
+        fp.write(f".. _{label}:\n\n")
+        fp.write(f"..\n  {title[1]}\n\n")
+        fp.write(fmt_section(delims[depth], title[0], depth < 2))
+        if depth < 2:
+            fp.write("\n".join([
+                "",
+                ".. toctree::",
+                "   :maxdepth: 2",
+                "   :caption: Inhalt:",
+                *(["   :numbered:"] if depth == 0 else []),
+                "",
+                "",
+            ]))
+
+    for (name, (section, contents)), (name_e, (section_e, contents_e)) in zip(doc[0].items(), doc[1].items()):
+        write_rst((contents, contents_e), depth + 1, section, (name, name_e))
+        if depth < 2:
+            with open("source/" + fname, "at") as fp:
+                if depth == 0:
+                    fp.write(f"   {section[0]}/index\n")
+                else:
+                    fp.write(f"   {section[1]}\n")
+
+
+def fmt_section(delim, name, overline):
+    line = delim * len(name) + "\n"
+
+    if overline:
+        return line + name + "\n" + line + "\n\n"
+    else:
+        return name + "\n" + line + "\n\n"
+
+
+def read_file(filename):
+    result = {}
+    cur = {}
+
+    with open(filename, "rt") as fp:
+        for line in fp:
+            if not (m := re.match(r"^([\d.]+?)\.?\s+(\S.*?)\s*$", line)):
+                raise ValueError(line)
+            section, name = m.groups()
+            section = [int(x) for x in section.split(".")]
+            depth = len(section) - 1
+            if depth:
+                cur[depth] = {}
+                cur[depth - 1][name] = section, cur[depth]
+            else:
+                result[name] = section, {}
+                cur[depth] = result[name][1]
+
+    return result
+
+
+german = read_file("deutsch.txt")
+english = read_file("english.txt")
+write_rst((german, english), 0, [], ("Dokumententitel", "document title"))
