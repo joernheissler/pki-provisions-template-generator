@@ -78,7 +78,8 @@ def read_file(filename):
 
     with open(filename, "rt") as fp:
         for line in fp:
-            if not (m := re.match(r"^([\d.]+?)\.?\s+(\S.*?)\s*$", line)):
+            m = re.match(r"^([\d.]+?)\.?\s+(\S.*?)\s*$", line)
+            if not m:
                 raise ValueError(line)
             section, name = m.groups()
             section = [int(x) for x in section.split(".")]
