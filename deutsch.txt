@@ -89,7 +89,7 @@
 4.9.4 Frist für den Antrag auf Widerruf
 4.9.5 Zeit, innerhalb der die CA den Sperrantrag bearbeiten muß
 4.9.6 Widerrufsprüfungsanforderung für sich berufende Parteien
-4.9.7 Häufigkeit der GRL-Ausstellung (falls zutreffend)
+4.9.7 Häufigkeit der CRL-Ausstellung (falls zutreffend)
 4.9.8 Maximale Latenzzeit für CRLs (falls zutreffend)
 4.9.9 Online-Widerruf/Statusprüfung der Verfügbarkeit
 4.9.10 Anforderungen an die Online-Widerrufsprüfung
@@ -203,7 +203,7 @@
 7.1.7 Verwendung der Erweiterung "Policy Constraints
 7.1.8 Syntax und Semantik von Richtlinienqualifizierern
 7.1.9 Verarbeitungssemantik für die kritische Erweiterung der Zertifikatsrichtlinien
-7.2 GRL-Profil
+7.2 CRL-Profil
 7.2.1 Versionsnummer(n)
 7.2.2 CRL und CRL-Eintragserweiterungen
 7.3 OCSP-Profil

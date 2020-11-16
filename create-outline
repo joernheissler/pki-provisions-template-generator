@@ -44,10 +44,11 @@ def write_rst(doc, depth, idx, title):
         fp.write(fmt_section(delims[depth], title[0], depth < 2))
         if depth < 2:
             fp.write("\n".join([
+                ".. include:: versionshistorie.rst\n",
                 "",
                 ".. toctree::",
                 "   :maxdepth: 2",
-                "   :caption: Inhalt:",
+                "   :caption: Inhaltsverzeichnis:",
                 *(["   :numbered:"] if depth == 0 else []),
                 "",
                 "",
